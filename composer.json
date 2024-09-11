@@ -1,0 +1,53 @@
+{
+    "name": "rapttor/generator",
+    "description": "",
+    "homepage": "http://github.com/rapttor/generator",
+    "version": "1.0.0",
+    "keywords": [
+        "composer",
+        "package"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Emir Kurtovic",
+            "email": "rapttor@gmail.com",
+            "homepage": "http://www.rapttor.com/",
+            "role": "Founder and project lead"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/rapttor/generator/issues?state=open",
+        "wiki": "https://github.com/rapttor/generator/wiki",
+        "source": "https://github.com/rapttor/generator.git"
+    },
+    "type": "project",
+    "require": {
+        "php": ">=5.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "squizlabs/php_codesniffer": "*",
+        "phpmd/phpmd": "*",
+        "phpdocumentor/phpdocumentor": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "RapTToR\\Generator\\": "src/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "@php vendor/bin/phpunit"
+        ],
+        "psr2check": [
+            "@php vendor/bin/phpcs --standard=PSR2 src/"
+        ],
+        "psr2autofix": [
+            "@php vendor/bin/phpcbf --standard=PSR2 src/"
+        ],
+        "docs": [
+            "@php vendor/bin/phpdoc -d \"src\" -t \"docs\""
+        ]
+    }
+}
